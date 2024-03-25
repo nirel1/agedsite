@@ -21,7 +21,7 @@ export default function Home() {
     if (isBGLoaded) {
       setTimeout(() => {
         setIsPreloaderOpen(false);
-      }, 500);
+      }, 1500);
     }
   }, [isBGLoaded]);
 
