@@ -21,7 +21,7 @@ function Join() {
           </div>
         </div>
         <div className="text-center  text-base -mt-4">
-          Interested in increasing the capabilites of your DeFi protocol?
+          Interested in learningm more?
         </div>
 
         <Form />
