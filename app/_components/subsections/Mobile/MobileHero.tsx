@@ -7,7 +7,7 @@ function MobileHero() {
     <>
       <div className="text-xs">
         <Image src={StrobeBlack} alt={"logo"} className={`w-20 h-auto`} />
-        <div className="mt-2">be resilient.</div>
+        {/* <div className="mt-2">be resilient.</div> */}
       </div>
       <br></br>
       <div className="text-center text-black text-xl">

@@ -16,12 +16,12 @@ function Join() {
       <CenteredVStack className="h-full gap-16 relative pt-24 px-72 text-black">
         <div>
           <Image src={StrobeBlack} alt="logo" className="w-44 h-auto" />
-          <div className="text-xs text-center mt-4">
+          {/* <div className="text-xs text-center mt-4">
             be resilient.
-          </div>
+          </div> */}
         </div>
         <div className="text-center  text-base -mt-4">
-          Interested in learningm more?
+          interested in learning more?
         </div>
 
         <Form />

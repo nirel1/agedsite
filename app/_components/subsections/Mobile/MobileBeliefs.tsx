@@ -11,7 +11,7 @@ function MobileBeliefs() {
         DeFi builders to unlock new forms of permissionless innovation.
       </div> */}
       <div className="text-center text-black text-md md:text-xl px-10 md:px-44">
-        We believe humans in the loop keep blockchains from 
+        we believe humans in the loop keep blockchains from 
         <br/>
         achieving their potential, 
         and more resilient systems of the future will rely 
@@ -20,7 +20,7 @@ function MobileBeliefs() {
         
         <br/>
         <br/>
-        Our vision is to power new crypto apps and markets that
+        our vision is to power apps and markets that
         <br/>
         couldn’t exist before, which allow users to build, exchange,  
         <br/>

@@ -32,7 +32,7 @@ function Hero() {
           </div>
 
           <PaneFooter className="animate-pulse">
-            Scroll to read more.
+            scroll to read more.
           </PaneFooter>
         </CenteredVStack>
       </AnimatedPane>

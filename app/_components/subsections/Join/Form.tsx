@@ -20,14 +20,14 @@ function Form() {
     <div className="w-full flex flex-col gap-4 -mt-4">
       <div className="w-full" style={{ minWidth: '250px' }}> 
         <Input
-          label={"Name of your project"}
+          label={"name of your project"}
           placeholder={"based..."}
           onChange={setProjectName}
         />
       </div>
       <div className="w-full" style={{ minWidth: '250px' }}>
         <Input
-          label={"Best way to reach you (email, tg, phone)"}
+          label={"best way to reach you (email, tg, phone)"}
           placeholder={"email..."}
           onChange={setContact}
         />
@@ -42,7 +42,7 @@ function Form() {
       <br></br>
       <div className="w-full flex gap-4 justify-end text-xs items-center">
         <div>
-          Or reach out to{" "}
+          or reach out to{" "}
           <span className="underline text-blue-500 ">
             <a href="mailto:contact@strobe.org">contact@strobe.org</a>
           </span>
@@ -52,7 +52,7 @@ function Form() {
           disabled={disabled}
           className="w-auto"
         >
-          {disabled ? "Shipped!" : "Ship"}
+          {disabled ? "shipped!" : "ship"}
         </FooterButton>
       </div>
     </div>
