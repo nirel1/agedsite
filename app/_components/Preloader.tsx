@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { UAParser } from "ua-parser-js";
-import StrobeWhite from "@/public/strobe.png";
+import StrobeWhite from "@/public/strobe-low.svg";
 
 function Preloader() {
   const [userAgentInfo, setUserAgentInfo] = useState<UAParser.IResult | null>(
@@ -20,6 +20,7 @@ function Preloader() {
         src={StrobeWhite}
         className="h-auto w-96  mt-28 opacity-70"
         alt={"logo"}
+        priority
       />
 
       {userAgentInfo && (

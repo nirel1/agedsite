@@ -1,7 +1,7 @@
 import React from "react";
 import BackgroundLogo from "./BackgroundLogo";
 import Image from "next/image";
-import BG from "@/public/bg.svg";
+import BG from "@/public/bg-min.png";
 
 function Background({
   setIsBGLoaded,
@@ -24,6 +24,7 @@ function Background({
             className="grayscale"
             priority // Ensures the image is preloaded
             onLoad={() => setIsBGLoaded(true)}
+            placeholder="blur"
           />
         </div>
       </div>
