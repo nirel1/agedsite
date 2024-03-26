@@ -1,31 +1,37 @@
-import React, { useState } from 'react'
-import Input from '../../Input'
-import FooterButton from '../Footer/FooterButton';
+import React, { useState } from "react";
+import Input from "../../Input";
+import FooterButton from "../Footer/FooterButton";
+import { Resend } from "resend";
 
 function Form() {
-
   const [projectName, setProjectName] = useState("");
   const [contact, setContact] = useState("");
   // const [msg, setMsg] = useState("");
   const [disabled, setDisabled] = useState(false);
 
+  const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_KEY);
+
   const handleSendEmail = () => {
-    console.log("projectName", projectName);
-    console.log("contact", contact);
-    alert("To be implemented");
+    resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: "contact@strobe.org",
+      subject: "Strobe Contact Inquiry",
+      html: `<p>Hi! I have a project ${projectName}. Reach out to me at ${contact}</p>`,
+    });
+
     setDisabled(true);
   };
 
   return (
     <div className="w-full flex flex-col gap-4 -mt-4">
-      <div className="w-full" style={{ minWidth: '250px' }}> 
+      <div className="w-full" style={{ minWidth: "250px" }}>
         <Input
           label={"name of your project"}
           placeholder={"based..."}
           onChange={setProjectName}
         />
       </div>
-      <div className="w-full" style={{ minWidth: '250px' }}>
+      <div className="w-full" style={{ minWidth: "250px" }}>
         <Input
           label={"best way to reach you (email, tg, phone)"}
           placeholder={"email..."}
@@ -56,7 +62,7 @@ function Form() {
         </FooterButton>
       </div>
     </div>
-  )
+  );
 }
 
-export default Form
+export default Form;
