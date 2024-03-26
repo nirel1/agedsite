@@ -1,6 +1,7 @@
 "use client";
 
-import { Script, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Script from 'next/script/;
 import Preloader from "./_components/Preloader";
 import Footer from "./_components/Footer";
 import Background from "./_components/subsections/Background/Background";
