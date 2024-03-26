@@ -1,16 +1,10 @@
 "use client";
-
 import { useEffect, useState } from "react";
-import Script from 'next/script';
+import Script from "next/script";
 import Preloader from "./_components/Preloader";
-import Footer from "./_components/Footer";
 import Background from "./_components/subsections/Background/Background";
-import Hero from "./_components/subsections/Hero";
-// import Partners from "./_components/subsections/Partners";
-import Beliefs from "./_components/subsections/Beliefs";
-import Join from "./_components/subsections/Join";
 import MobileScreen from "./_components/MobileScreen";
-import { SelectedButtonProvider } from "./SelectedButtonContext";
+import DesktopScreen from "./_components/DesktopScreen";
 // import ReactGA from "react-ga4";
 
 // ReactGA.initialize("G-FN4X02CBQN");
@@ -43,9 +37,13 @@ export default function Home() {
 
   return (
     <>
-      <Script strategy="afterInteractive" async src="https://www.googletagmanager.com/gtag/js?id=G-FN4X02CBQN" />
       <Script
-        id='google-analytics'
+        strategy="afterInteractive"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-FN4X02CBQN"
+      />
+      <Script
+        id="google-analytics"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -61,19 +59,7 @@ export default function Home() {
       <MobileScreen />
       {isPreloaderOpen && isNonMobileViewport && <Preloader />}
       {isNonMobileViewport && <Background setIsBGLoaded={setIsBGLoaded} />}
-      {!isPreloaderOpen && isNonMobileViewport && (
-        <SelectedButtonProvider>
-          <div>
-            <main className="min-h-full w-screen absolute top-0 left-0 font-msSans">
-              <Hero />
-              {/* <Partners /> */}
-              <Beliefs />
-              <Join />
-            </main>
-            <Footer />
-          </div>
-        </SelectedButtonProvider>
-      )}
+      {!isPreloaderOpen && isNonMobileViewport && <DesktopScreen />}
     </>
   );
 }
