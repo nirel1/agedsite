@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Script, useEffect, useState } from "react";
 import Preloader from "./_components/Preloader";
 import Footer from "./_components/Footer";
 import Background from "./_components/subsections/Background/Background";
@@ -27,6 +27,21 @@ export default function Home() {
 
   return (
     <>
+      <Script strategy="afterInteractive" async src="https://www.googletagmanager.com/gtag/js?id=G-FN4X02CBQN" />
+      <Script
+        id='google-analytics'
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-FN4X02CBQN', {
+            page_path: window.location.pathname,
+          });
+        `,
+        }}
+      />
       <MobileScreen />
       {isPreloaderOpen && <Preloader />}
       <Background setIsBGLoaded={setIsBGLoaded} />
