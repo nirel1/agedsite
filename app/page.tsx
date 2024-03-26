@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Script from 'next/script/';
+import Script from 'next/script';
 import Preloader from "./_components/Preloader";
 import Footer from "./_components/Footer";
 import Background from "./_components/subsections/Background/Background";
@@ -11,6 +11,9 @@ import Beliefs from "./_components/subsections/Beliefs";
 import Join from "./_components/subsections/Join";
 import MobileScreen from "./_components/MobileScreen";
 import { SelectedButtonProvider } from "./SelectedButtonContext";
+// import ReactGA from "react-ga4";
+
+// ReactGA.initialize("G-FN4X02CBQN");
 
 export default function Home() {
   const [isPreloaderOpen, setIsPreloaderOpen] = useState(true);
