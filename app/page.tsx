@@ -9,7 +9,7 @@ import Partners from "./_components/subsections/Partners";
 import Beliefs from "./_components/subsections/Beliefs";
 import Join from "./_components/subsections/Join";
 import MobileScreen from "./_components/MobileScreen";
-import { SelectedButtonProvider } from './SelectedButtonContext';
+import { SelectedButtonProvider } from "./SelectedButtonContext";
 
 export default function Home() {
   const [isPreloaderOpen, setIsPreloaderOpen] = useState(true);
@@ -30,17 +30,19 @@ export default function Home() {
       <MobileScreen />
       {isPreloaderOpen && <Preloader />}
       <Background setIsBGLoaded={setIsBGLoaded} />
-      <SelectedButtonProvider>
-        <div>
-          <main className="min-h-full w-screen absolute top-0 left-0 font-msSans hidden md:block">
-            <Hero />
-            {/* <Partners /> */}
-            <Beliefs />
-            <Join />
-          </main>
-          <Footer />
-        </div>
-      </SelectedButtonProvider>
+      {!isPreloaderOpen && (
+        <SelectedButtonProvider>
+          <div>
+            <main className="min-h-full w-screen absolute top-0 left-0 font-msSans hidden md:block invisible md:visible">
+              <Hero />
+              {/* <Partners /> */}
+              <Beliefs />
+              <Join />
+            </main>
+            <Footer />
+          </div>
+        </SelectedButtonProvider>
+      )}
     </>
   );
 }

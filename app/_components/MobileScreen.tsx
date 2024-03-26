@@ -26,6 +26,8 @@ function MobileScreen() {
 
       <Spacer />
       <MobileForm />
+      <Spacer />
+      <Spacer />
       {/* <Spacer />
       <Spacer /> */}
 

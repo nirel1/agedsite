@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, SetStateAction, useState } from "react";
+import React, { useMemo, SetStateAction, useState, useEffect } from "react";
 import Image from "next/image";
 import FooterButton from "./subsections/Footer/FooterButton";
 import Column from "./Column";
@@ -12,8 +12,7 @@ import RealtekIcon from "@/public/Realtek.png";
 import TrashIcon from "@/public/Trash.png";
 import SoundIcon from "@/public/Sound.png";
 // In Footer.js
-import { useSelectedButton } from '../SelectedButtonContext';
-
+import { useSelectedButton } from "../SelectedButtonContext";
 
 const footerButtons = [
   { icon: StrobeBlack, label: "", width: "w-14", href: "hero" },
@@ -24,8 +23,31 @@ const footerButtons = [
 ];
 
 function Footer() {
+  const {
+    selectedButton,
+    setSelectedButton,
+    setIsManualSelection,
+    isManualSelection,
+  } = useSelectedButton();
+  const [currentTime, setCurrentTime] = useState("");
 
-  const { selectedButton, setSelectedButton, setIsManualSelection, isManualSelection } = useSelectedButton();
+  useEffect(() => {
+    const updateTime = () => {
+      setCurrentTime(
+        new Date().toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
+          timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        })
+      );
+    };
+
+    updateTime(); // Update time immediately on mount and then every minute
+    const intervalId = setInterval(updateTime, 60000); // Update time every minute
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
 
   // const TimeDisplay = () => {
   //   const userTimeZone = useMemo(() => {
@@ -39,11 +61,11 @@ function Footer() {
       join: 1600,
       // Add other sections as needed
     };
-  
+
     const targetScrollPosition = sectionScrollPositions[href];
-    console.log( {href, targetScrollPosition});
+    console.log({ href, targetScrollPosition });
     if (targetScrollPosition !== undefined) {
-      window.scrollTo({ top: targetScrollPosition, behavior: 'auto' });
+      window.scrollTo({ top: targetScrollPosition, behavior: "auto" });
     }
   };
 
@@ -60,10 +82,10 @@ function Footer() {
 
               setSelectedButton(href);
               scrollToSection(href);
-              
+
               setTimeout(() => {
                 setIsManualSelection(false);
-            }, 300);
+              }, 300);
             }}
             isSelected={selectedButton === href} // Pass the selected state
           >
@@ -89,12 +111,7 @@ function Footer() {
         </div>
         <div className="text-xs text-black font-msSans">
           {/* display time- only hours and minutes */}
-          {new Date().toLocaleTimeString("en-US", {
-            hour: "numeric",
-            minute: "numeric",
-            hour12: true,
-            timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-          })}
+          {currentTime}
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ function Preloader() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 z-50 w-screen h-screen bg-[#040404] flex items-center flex-col  font-msSans text-white justify-between">
+    <div className="fixed top-0 left-0 z-50 w-screen h-screen bg-[#040404] flex items-center flex-col  font-msSans text-white justify-between pointer-events-none">
       <Image
         src={StrobeWhite}
         className="h-auto w-96  mt-28 opacity-70"
