@@ -6,20 +6,40 @@ import { Resend } from "resend";
 function Form() {
   const [projectName, setProjectName] = useState("");
   const [contact, setContact] = useState("");
-  // const [msg, setMsg] = useState("");
   const [disabled, setDisabled] = useState(false);
 
-  const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_KEY);
+  const handleSendEmail = async () => {
+    setDisabled(true); // Disable the button immediately to prevent multiple sends
 
-  const handleSendEmail = () => {
-    resend.emails.send({
+    // Construct the email data
+    const emailData = {
       from: "onboarding@resend.dev",
-      to: "contact@strobe.org",
+      to: ["contact@strobe.org"], // Adjust according to your needs
       subject: "Strobe Contact Inquiry",
       html: `<p>Hi! I have a project ${projectName}. Reach out to me at ${contact}</p>`,
-    });
+    };
 
-    setDisabled(true);
+    try {
+      const response = await fetch('../../api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      // Handle success here, e.g., showing a success message
+      console.log('Email sent successfully');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      // Handle error here, e.g., showing an error message
+    } finally {
+      setDisabled(false); // Re-enable the button after the request is complete
+    }
   };
 
   return (
@@ -66,3 +86,4 @@ function Form() {
 }
 
 export default Form;
+

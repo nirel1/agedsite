@@ -49,7 +49,7 @@ function FooterButton({
 
   // Add a conditional class for the selected state
   const selectedClass = isSelected ? 
-    'text-red-500 font-bold outline outline-black outline-1 bg-red-200' : ''; // Adjust the color as needed
+    'text-blue-500 font-bold outline outline-black outline-1 bg-red-200' : ''; // Adjust the color as needed
 
   if (href) {
     return (

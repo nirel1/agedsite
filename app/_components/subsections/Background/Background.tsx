@@ -11,8 +11,8 @@ function Background({
   return (
     <>
       <div className="fixed top-0 left-0 z-[-1] w-screen h-screen overflow-hidden">
-        <div className="absolute w-full h-full bg-gradient-to-br from-red-500 via-yellow-500 to-transparent opacity-100"></div>
-        <div className="absolute w-full h-full bg-gradient-to-br from-orange-900 to-black opacity-100"></div>
+        <div className="absolute w-full h-full bg-gradient-to-br from-[#002171] via-[#004D40] to-[#000000] opacity-100"></div>
+        <div className="absolute w-full h-full bg-gradient-to-br from-[#004D40] to-[#002171] opacity-100"></div>
         <div className="absolute w-full h-full mix-blend-screen">
           <Image
             src={BG}
