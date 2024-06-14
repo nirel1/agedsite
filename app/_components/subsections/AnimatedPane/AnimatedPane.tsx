@@ -18,12 +18,14 @@ function AnimatedPane({
   startingXOffset,
   endingXOffset,
   href,
+  shouldCloseOnScroll = true,
 }: {
   children: ReactNode;
   openByDefault?: boolean;
   startingXOffset: string;
   endingXOffset: string;
   href: string;
+  shouldCloseOnScroll?: boolean;
 }) {
   const ref = useRef(null);
   const { setSelectedButton, isManualSelection } = useSelectedButton();
@@ -127,13 +129,13 @@ function AnimatedPane({
   const width = useTransform(
     scrollYProgress,
     [0, 0.25, 0.75, 0.9, 1],
-    [openByDefault ? "100%" : "0%", "100%", "100%", "6%", "0%"]
+    [openByDefault || !shouldCloseOnScroll ? "100%" : "0%", "100%", "100%", "6%", "0%"]
   );
 
   const translateY = useTransform(
     scrollYProgress,
     [0, 0.2, 0.75, 0.9],
-    [openByDefault ? "0vh" : "100vh", "0vh", "0vh", "100vh"]
+    [openByDefault || !shouldCloseOnScroll ? "0vh" : "100vh", "0vh", "0vh", "100vh"]
   );
 
   const translateX = useTransform(
@@ -145,13 +147,13 @@ function AnimatedPane({
   const height = useTransform(
     scrollYProgress,
     [0, 0.25, 0.75, 1],
-    [openByDefault ? "80vh" : "0vh", "80vh", "80vh", "0vh"]
+    [openByDefault || !shouldCloseOnScroll ? "80vh" : "0vh", "80vh", "80vh", "0vh"]
   );
 
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.25, 0.7, 1],
-    [openByDefault ? 1 : 0, 1, 1, 0]
+    [openByDefault || !shouldCloseOnScroll ? 1 : 0, 1, 1, 0]
   );
 
   return (
