@@ -48,7 +48,7 @@ function Form() {
         <Input
           label={"name of your project"}
           placeholder={"based..."}
-          className="text-white"
+          className="text-black"
           onChange={setProjectName}
         />
       </div>
@@ -56,7 +56,7 @@ function Form() {
         <Input
           label={"best way to reach you (email, tg, phone)"}
           placeholder={"email..."}
-          className="text-white"
+          className="text-black"
           onChange={setContact}
         />
       </div>

@@ -4,10 +4,7 @@ import Header from "./AnimatedPane/Header";
 import CenteredVStack from "../CenteredVStack";
 import PaneFooter from "./AnimatedPane/PaneFooter";
 import { twMerge } from "tailwind-merge";
-import FooterButton from "./Footer/FooterButton";
 import StrobeBlack from "@/public/strobe-black.png";
-import ArrowIcon from "@/public/arrow.png";
-import Image from "next/image";
 
 // See excalidraw https://app.excalidraw.com/l/5Q2hRCW2FRh/3GhMO1emfjN
 function How() {
@@ -56,18 +53,6 @@ function How() {
   const containerColor = "087C7C";
   const boxColor = "11B4D8";
   const borderColor = "11B4D8";
-
-  const handleBackPress = () => {
-    if (activeIndex > 0) {
-      setActiveIndex(activeIndex - 1);
-    }
-  };
-
-  const handleNextPress = () => {
-    if (activeIndex < strobeStack.length - 1) {
-      setActiveIndex(activeIndex + 1);
-    }
-  };
 
   const renderCaption = (caption: string, link?: string) => {
     if (!link) return caption;
@@ -162,25 +147,9 @@ function How() {
           </div>
         </div>
 
-        <div className="w-full h-[12vh] flex gap-2 items-center justify-center ">
-          <FooterButton
-            onClick={handleBackPress}
-            className={twMerge(
-              "h-full w-auto",
-              activeIndex === 0 && "opacity-10 cursor-not-allowed"
-            )}
-            disabled={activeIndex === 0}
-          >
-            <Image
-              src={ArrowIcon.src}
-              alt="arrow"
-              className="h-6 w-6 rotate-180"
-              width={40}
-              height={40}
-            />
-          </FooterButton>
-          <div className="w-[85%] h-full flex items-center justify-center py-2">
-            <div className="text-md whitespace-pre-wrap px-4 text-center ">
+        <div className="w-full h-[12vh] flex items-center justify-start " style={{ transform: "translateY(-20%)" }}>
+          <div className="w-full h-full flex items-center justify-start py-2 border border-gray-400">
+            <div className="text-md whitespace-pre-wrap px-4 text-left ">
               <div>
                 
                 {renderCaption(
@@ -190,23 +159,6 @@ function How() {
               </div>
             </div>
           </div>
-          <FooterButton
-            onClick={handleNextPress}
-            className={twMerge(
-              "h-full w-auto",
-              activeIndex === strobeStack.length - 1 &&
-                "opacity-10 cursor-not-allowed"
-            )}
-            disabled={activeIndex === strobeStack.length - 1}
-          >
-            <Image
-              src={ArrowIcon.src}
-              alt="arrow"
-              className="h-6 w-6"
-              width={40}
-              height={40}
-            />
-          </FooterButton>
         </div>
         <PaneFooter className={twMerge("animate-pulse text-[#11B4D8]")}>
           hover on each row to see what we're building
