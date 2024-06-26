@@ -4,6 +4,7 @@ import Hero from "./subsections/Hero";
 import Beliefs from "./subsections/Beliefs";
 import Join from "./subsections/Join";
 import Footer from "./Footer";
+import How from "./subsections/How";
 
 function DesktopScreen() {
   return (
@@ -12,6 +13,7 @@ function DesktopScreen() {
         <div>
           <main className="min-h-full w-screen absolute top-0 left-0 font-msSans">
             <Hero />
+            <How/>
             {/* <Partners /> */}
             <Beliefs />
             <Join />

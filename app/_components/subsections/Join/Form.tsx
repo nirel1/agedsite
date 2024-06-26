@@ -43,11 +43,12 @@ function Form() {
   };
 
   return (
-    <div className="w-full flex flex-col gap-4 -mt-4">
+    <div className="w-full flex flex-col gap-4 -mt-4 text-white">
       <div className="w-full" style={{ minWidth: "250px" }}>
         <Input
           label={"name of your project"}
           placeholder={"based..."}
+          className="text-black"
           onChange={setProjectName}
         />
       </div>
@@ -55,6 +56,7 @@ function Form() {
         <Input
           label={"best way to reach you (email, tg, phone)"}
           placeholder={"email..."}
+          className="text-black"
           onChange={setContact}
         />
       </div>

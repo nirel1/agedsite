@@ -27,7 +27,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(to top, rgb(0, 0, 0), rgb(0, 0, 255));
+  background: linear-gradient(to bottom, rgb(0, 234, 226), rgb(27, 27, 244));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -47,3 +47,8 @@ body {
 /* ::-webkit-scrollbar {
     display: none;
 } */
+
+
+.mobile-screen-bg {
+  background: linear-gradient(177deg, #054351 48.81%, #15347A 97.75%);
+}
