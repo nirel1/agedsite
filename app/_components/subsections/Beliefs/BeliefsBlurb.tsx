@@ -6,7 +6,7 @@ import Image from "next/image";
 
 function BeliefsBlurb() {
   return (
-    <div className="flex flex-col gap-2 md:w-[100%] items-center">
+    <div className="flex flex-col gap-2 md:w-[100%] items-center text-black">
       <div>
         <div className="flex gap-4 items-center ">
           <div className="flex items-center gap-4">

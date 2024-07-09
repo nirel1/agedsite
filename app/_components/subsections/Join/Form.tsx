@@ -14,13 +14,13 @@ function Form() {
     // Construct the email data
     const emailData = {
       from: "onboarding@resend.dev",
-      to: ["contact@strobe.org"], // Adjust according to your needs
+      to: ["nirel@strobe.org"], // Adjust according to your needs
       subject: "Strobe Contact Inquiry",
       html: `<p>Hi! I have a project ${projectName}. Reach out to me at ${contact}</p>`,
     };
 
     try {
-      const response = await fetch('../../api/sendEmail', {
+      const response = await fetch('api/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,11 +43,12 @@ function Form() {
   };
 
   return (
-    <div className="w-full flex flex-col gap-4 -mt-4">
+    <div className="w-full flex flex-col gap-4 -mt-4 text-white">
       <div className="w-full" style={{ minWidth: "250px" }}>
         <Input
           label={"name of your project"}
           placeholder={"based..."}
+          className="text-black"
           onChange={setProjectName}
         />
       </div>
@@ -55,6 +56,7 @@ function Form() {
         <Input
           label={"best way to reach you (email, tg, phone)"}
           placeholder={"email..."}
+          className="text-black"
           onChange={setContact}
         />
       </div>
@@ -86,4 +88,3 @@ function Form() {
 }
 
 export default Form;
-

@@ -11,12 +11,14 @@ import JoinIcon from "@/public/Join.png";
 import RealtekIcon from "@/public/Realtek.png";
 import TrashIcon from "@/public/Trash.png";
 import SoundIcon from "@/public/Sound.png";
+import HowIcon from "@/public/HowIcon.png";
 // In Footer.js
 import { useSelectedButton } from "../SelectedButtonContext";
 
 const footerButtons = [
   { icon: StrobeBlack, label: "", width: "w-14", href: "hero" },
   { icon: HomeIcon, label: "welcome", width: "w-8", href: "hero" },
+  { icon: HowIcon, label: "how", width: "w-8", href: "how"},
   // { icon: TrustIcon, label: "Trusted By", width: "w-8", href: "trusted" },
   { icon: BeliefIcon, label: "beliefs", width: "w-8", href: "belief" },
   { icon: JoinIcon, label: "join us", width: "w-8", href: "join" },
@@ -57,6 +59,7 @@ function Footer() {
   const scrollToSection = (href: string) => {
     const sectionScrollPositions: { [key: string]: number } = {
       hero: 0,
+      how: 400,
       belief: 1000,
       join: 1600,
       // Add other sections as needed
