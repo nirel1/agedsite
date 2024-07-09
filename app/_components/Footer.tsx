@@ -59,6 +59,7 @@ function Footer() {
   const scrollToSection = (href: string) => {
     const sectionScrollPositions: { [key: string]: number } = {
       hero: 0,
+      how: 400,
       belief: 1000,
       join: 1600,
       // Add other sections as needed

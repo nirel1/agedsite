@@ -14,13 +14,13 @@ function Form() {
     // Construct the email data
     const emailData = {
       from: "onboarding@resend.dev",
-      to: ["contact@strobe.org"], // Adjust according to your needs
+      to: ["nirel@strobe.org"], // Adjust according to your needs
       subject: "Strobe Contact Inquiry",
       html: `<p>Hi! I have a project ${projectName}. Reach out to me at ${contact}</p>`,
     };
 
     try {
-      const response = await fetch('../../api/sendEmail', {
+      const response = await fetch('api/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,4 +88,3 @@ function Form() {
 }
 
 export default Form;
-

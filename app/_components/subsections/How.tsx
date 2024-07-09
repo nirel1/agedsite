@@ -86,8 +86,12 @@ function How() {
       <Header id={"how"}>how</Header>
 
       <CenteredVStack className="h-full gap-16 relative pt-12 text-black  w-full px-24">
-        <div className="flex justify-between  w-full">
-          <div className="flex flex-col justify-around gap-6 w-1/2">
+        <div className="flex flex-col xl:flex-row justify-between  w-full">
+          <div className=" w-full xl:hidden text-center mb-4 text-lg font-bold">
+            {/* label here */}
+            {strobeStack[activeIndex].label}
+          </div>
+          <div className=" flex-col justify-around gap-6 w-1/2 hidden xl:flex">
             {strobeStack.map(({ label, items, caption, tier }, index) => (
               <div
                 className={twMerge(
@@ -147,11 +151,13 @@ function How() {
           </div>
         </div>
 
-        <div className="w-full h-[12vh] flex items-center justify-start " style={{ transform: "translateY(-20%)" }}>
-          <div className="w-full h-full flex items-center justify-start py-2 border border-gray-400">
-            <div className="text-md whitespace-pre-wrap px-4 text-left ">
+        <div
+          className="w-full h-[12vh] flex items-center justify-start "
+          style={{ transform: "translateY(-20%)" }}
+        >
+          <div className="w-full h-full flex items-center justify-start py-2   xl:border xl:border-gray-400">
+            <div className="text-sm xl:text-lg whitespace-pre-wrap px-4 text-center xl:text-left mb-4 xl:mb-0">
               <div>
-                
                 {renderCaption(
                   strobeStack[activeIndex].caption,
                   strobeStack[activeIndex].link
