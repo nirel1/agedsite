@@ -45,7 +45,7 @@ function How() {
       label: "suppliers",
       items: [1, 2, 3],
       caption:
-        "We're lucky to build on the progress of communities bootstrapped by proving networks, aggregators, and verifiable oracles. But it's not just the big players - not only can Alice supply proofs on her laptop, but she has the tools to bootstrap entirely new information markets or hardware networks- herself.",
+        "We're lucky to build on the progress of communities bootstrapped by proving networks, aggregators, and verifiable oracles. Bootstrapping new verifiable networks shouldn't rely on VCs.",
       tier: 3,
     },
   ];

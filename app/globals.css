@@ -32,6 +32,12 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.gradient-text2 {
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(186, 186, 218));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
