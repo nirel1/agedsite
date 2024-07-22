@@ -12,11 +12,10 @@ function MobileHero() {
       </div>
       <br></br>
       <div className="text-center text-white text-xl">
-        strobe is where offchain innovation <br />
-        meets onchain execution. <br />
+      strobe is building a protocol for <span className="gradient-text2">trust-minimized</span> markets.<br />
         <br />
         we are working to enable new kinds <br />
-        of <span className="gradient-text">trust-minimized</span> markets.
+        of economic interactions.
       </div>
     </div>
   );

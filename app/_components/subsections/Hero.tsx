@@ -24,11 +24,10 @@ function Hero() {
         <CenteredVStack className="h-full gap-20 relative pt-24">
           <Image src={StrobeBlack} alt="logo" className="w-44 h-auto" />
           <div className="text-center text-black text-xl">
-            strobe is where offchain innovation <br />
-            meets onchain execution. <br/>
+            strobe is building a protocol for <span className="gradient-text">trust-minimized</span> markets. <br/>
             <br/> 
             we are working to enable new kinds <br/>
-            of <span className="gradient-text">trust-minimized</span> markets.
+            of  economic interactions.
           </div>
 
           <PaneFooter className="animate-pulse">
