@@ -15,9 +15,7 @@ export const metadata: Metadata = {
   description: "bringing offchain innovation to onchain execution",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default function RootLayout({}: Readonly<{
   children: React.ReactNode;
 }>) {
   const initialState = cookieToInitialState(config, headers().get("cookie"));
