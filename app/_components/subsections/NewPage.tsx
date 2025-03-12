@@ -9,7 +9,7 @@ const playfair = Playfair_Display({
 function NewPage() {
   return (
     <div className={`flex flex-col  h-screen bg-black ${playfair.className}`}>
-      <div className="text-2xl font-semibold text-white">contact@strobe.org</div>
+      <div className="text-2xl font-regular text-white">contact@strobe.org</div>
     </div>
   );
 }
